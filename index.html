@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" />
+    <title>Technical Documentaiton Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <nav id="navbar">
+      <header>React Documentation</header>
+
+      <a class="nav-link" href="#Getting_started_with_React">Getting started with React</a>
+
+      <a class="nav-link" href="#React_Components">React Components</a>
+
+      <a class="nav-link" href="#Props_in_React">Props in React</a>
+
+      <a class="nav-link" href="#State_in_React">State in React</a>
+
+      <a class="nav-link" href="#Events_in_React">Events in React</a>
+
+      <a class="nav-link" href="#React_Hooks">React Hooks</a>
+
+      <a class="nav-link" href="#Reference">Reference</a>
+    </nav>
+
+    <main id="main-doc">
+      <h1>Introduction to react</h1>
+
+      <section class="main-section" id="Getting_started_with_React">
+        <header>Getting Started with React</header>
+        <div class="section-content">
+          <p
+            >To start a new React project, you can use
+            <strong>Create React App</strong> or <strong>Vite</strong></p
+          >
+          <p class="code-title">Using Create React App</p>
+          <div class="code-div">
+            <p class="code-lang">sh</p>
+            <code
+              >npx create-react-app my-app <p class="yellow">cd</p> my-app
+              npm start
+            </code>
+          </div>
+          <p class="code-title">Using Vite</p>
+          <div class="code-div">
+            <p class="code-lang">sh</p>
+            <code
+              >npm create vite@latest my-app --template react
+              <p class="yellow">cd</p> my-app npm install npm run dev
+            </code>
+          </div>
+        </div>
+      </section>
+
+      <section class="main-section" id="React_Components">
+        <header>React Components</header>
+        <div class="section-content">
+          <p>
+            React apps are built using components, which are reusable pieces of
+            UI. Components can be functional or class-based.
+          </p>
+          <p class="code-title">Example of a Functional Component: </p>
+          <div class="code-div">
+            <p class="code-lang">jsx</p>
+            <pre><code>
+              <p class = "blue">function</p> <p class = 'red'>Greeting</p>() {
+                <p class = "blue text-indent">return</p> &lt;h1&gt; Hello World! &lt;/h1&gt;;
+              }
+            </code></pre>
+          
+            <p class="code-title">Example of a Class Component: </p>
+
+            <p class="code-lang">jsx</p>
+            <pre><code>
+              <p class = "blue">import</p> <p class = "red">React</p>, { <p class = "red">Component</p> } <p class = "blue">from</p> <p class = "green">"react"</p>;
+
+              <p class = "blue">class</p> <p class = 'red'>Greeting</p> <p class = "blue">extends</p> <p class = 'red'>Component</p> {
+                <p class = 'red text-indent'>render</p>() {
+                <p class = "blue text-indent2">return</p> &lt;h1&gt; Hello World! &lt;/h1&gt;;
+                <p class = "text-indent">}</p>
+              }
+            </code></pre>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="main-section" id="Props_in_React">
+        <header>Props in React</header>
+        <div class="section-content">
+          <p>Props (short for "properties") allow data to be passed from one component to another.
+     </p>
+
+            <p class="code-title">Example of Props: </p>
+
+            <p class="code-lang">jsx</p>
+            <pre><code>
+              <p class = "blue">function</p> <p class = "red">Welcome</p>(props) {
+              <p class = "blue text-indent">return</p>  &lt;h1&gt; Hello, {props.name}! &lt;/h1&gt;;
+              }
+              <p class = "blue">export default function</p>  <p class = "red">App</p>() {
+              <p class = "blue text-indent">return</p> &lt;Welcome <p class = "red">name </p>=<p class = "green"> "Alice</p>/&gt;;
+              }
+            </code></pre>
+        </div>
+      </section>
+
+      <section class="main-section" id="State_in_React">
+        <header>State in React</header>
+        <div class="section-content">
+          <p>
+            State is used to store and manage dynamic data in a component. It allows React components to update dynamically and re-render when the data changes.
+          </p>
+    
+          <p class="code-title">Example using <p class="state-code">useState</p> Hook:</p>
+    
+          <p class="code-lang">jsx</p>
+          <pre><code>
+            <p class="blue">import</p> { useState } <p class="blue">from</p> <p class="green">"react"</p>;
+    
+            <p class="blue">function</p> <p class="red">Counter</p>() {
+              <p class="blue">const [count, setCount] = useState(0);</p>
+    
+              <p class="blue">return</p> (
+               <p class = "text-indent2"> &lt;div&gt; </p>
+                 <p class = "text-indent3"> &lt;p&gt;Count: {count}&lt;/p&gt; </p>
+                  <p class ="text-indent3">&lt;button <p class ="red">onClick</p>= {<p class ="green">()</p> => setCount(count + 1)}&gt;</p>
+                    <p class ="text-indent3">Increment</p>
+                 <p class = "text-indent3"> &lt;/button&gt;</p>
+                <p class = "text-indent2">&lt;/div&gt;</p>
+              );
+            }
+          </code></pre>
+        </div>
+      </section>
+    
+      <section class="main-section" id="Events_in_React">
+        <header>Events in React</header>
+        <div class="section-content">
+          <p>
+            Handling events in React is similar to handling events in vanilla JavaScript. However, in React, you use camelCase for event names and pass a function reference rather than a string.
+          </p>
+    
+          <p class="code-title">Example of Handling Click Events:</p>
+    
+          <p class="code-lang">jsx</p>
+          <pre><code>
+            <p class="blue">function</p> <p class="red">ButtonClick</p>() {
+              <p class="blue">const handleClick = () => {</p>
+                <p class="blue">alert(<p class="green">"Button clicked!"</p>);</p>
+              };
+    
+              <p class="blue">return</p> (
+                <p class = "text-indent">&lt;button onClick={handleClick} &gt; Click Me &lt;/button&gt;</p>
+              );
+            }
+          </code></pre>
+        </div>
+      </section>
+    
+      <section class="main-section" id="React_Hooks">
+        <header>React Hooks</header>
+        <div class="section-content">
+          <p>
+            Hooks are special functions that let you use state and other React features in functional components. Some common hooks include <p class = "state-code">useState</p>, <p class = "state-code">useEffect</p>, and <p class = "state-code">useContext</p>.
+          </p>
+          <ul id ="hooks-ul"> 
+            <li>Hooks allow using state and other React features without writing a class.</li>
+            <li>Common hooks include useState, useEffect, useContext, useReducer, and useRef.</li>
+            <li>Hooks must be called in the same order and only at the top level of a component.</li>
+            <li>Custom hooks can be created to reuse logic across multiple components. </li>
+
+          </ul>
+          <p class="code-title">Example using <p class = "state-code">useState</p> and <p class = "state-code">useEffect</p> Hooks:</p>
+    
+          <p class="code-lang">jsx</p>
+          <pre><code>
+            <p class="blue">import</p> { <p class="red">useEffect</p>, <p class="red">useState</p> } <p class="blue">from</p> <p class="green">"react"</p>;
+          
+            <p class="blue">function</p> <p class="red">Timer</p>() {
+              <p class="blue">const</p> [time, setTime] = <p class="red">useState</p>(0);
+          
+              <p class="red text-indent">useEffect</p>(() => {
+                <p class="blue text-indent2">const</p> interval = <p class="blue">setInterval</p>(() => {
+                 <p class ="text-indent2">setTime((t) => t + 1); </p>
+                <p class = "text-indent2">}, 1000);</p>
+          
+                <p class="blue text-indent">return</p> () => <p class="blue">clearInterval</p>(interval);
+              <p class = "text-indent">}, []);</p>
+          
+              <p class="blue">return</p> &lt;p&gt;Time: {time} seconds&lt;/p&gt;;
+            }
+          </code></pre>
+          
+        </div>
+      </section>
+    
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <div class="section-content">
+          <p>
+            The information on this page was gathered from the following sources:
+          </p>
+          <ul id ="doc-links">
+            <li><a href="https://react.dev/" target="_blank">React Official Documentation</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN Web Docs (JavaScript)</a></li>
+            <li><a href="https://beta.reactjs.org/learn" target="_blank">React Beta Docs</a></li>
+          </ul>
+        </div>
+      </section>
+
+      
+    </main>
+  </body>
+</html>
