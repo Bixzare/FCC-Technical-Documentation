@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-family:Arial, Helvetica, sans-serif;
+  background-color: rgb(252, 251, 251);
+}
+#navbar {
+  
+  border-right: 4px solid grey;
+  padding: 10px;
+  padding-left: 20px;
+  padding-top: 20px;
+  position:fixed;
+  min-width:300px;
+  left:0;
+  top:0;
+  height:100%;
+
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+  /* border-bottom:2px solid black; */
+  display: block;
+  margin: 20px 0 0;
+  font-size: 16px;
+  padding: 10px;
+}
+#navbar a {
+  position: relative;
+  display: block;
+}
+#navbar header {
+  position: relative;
+  display: block;
+  padding: 10px;
+}
+#navbar header::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  right: -10px;
+  bottom: -10px;
+  height: 2px;
+  background-color: grey;
+}
+#navbar a:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  right: -10px;
+  bottom: -6px;
+  height: 2px;
+  background-color: grey;
+}
+
+.nav-link:hover {
+  color: skyblue;
+  background-color: black;
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+#navbar header {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+main {
+  display:block;
+  flex: 2;
+  margin-left: 20px;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+}
+.main-section {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+#main-doc {
+  margin: 10px 0 0 10px;
+  padding: 10px;
+  position:absolute;
+  margin-left:320px;
+  margin-bottom:100px;
+}
+
+code {
+  padding:15px;
+  white-space:pre-line;
+  display:block;
+  background-color: azure;
+  margin-bottom: 10px;
+  line-height: 200%;
+}
+.code-lang{
+  padding-left:10px;
+  background-color: beige;
+  width:100%;
+  display:block;
+  color:grey;
+  border-radius: 5px 5px 0 0;
+}
+.yellow {
+  color:orange;
+}
+.red{
+  color:red;
+}
+.blue {
+  color:rgb(0, 0, 136);
+}
+.green{
+  color:green;
+}
+.text-indent{
+  margin-left:15px;
+}
+.text-indent2{
+  margin-left:25px;
+}
+.text-indent3{
+  margin-left:35px;
+}
+.text-indent4{
+  margin-left:45px;
+}
+.code-title{
+  margin:25px 0;
+  display:block;
+}
+.main-section{
+  padding:10px;
+}
+.main-section header{
+  font-size:21px;
+  font-weight:bold;
+  margin:10px 0;
+}
+.section-content{
+  margin-left:10px;
+  padding:10px;
+}
+
+.state-code{
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0.5cap;
+  padding:2px 5px;
+}
+
+#doc-links li{
+  margin:13px 0;
+}
+p{
+  display:inline;
+}
+
+#hooks-ul{
+  margin: 15px 0;
+}
+#hooks-ul li{
+  margin:15px 0;
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  html {
+    font-size: 0.65rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: .75rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: .85rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 1rem;
+  }
+
+}
+
+
